@@ -1,1 +1,1 @@
-# Yolo Object Detection on NVIDIA Jetson Nano 
+# Yolo Object Detection with NVIDIA Jetson Nano 
