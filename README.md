@@ -2,6 +2,11 @@
 
 [CodePlay Jetson Nano Playlist](https://www.youtube.com/watch?v=5-SIV7r2uiU&list=PLZIi3Od9VUwW49q6T1VjShktoOgrDi3O4)
 
+## download model
+```
+https://github.com/ultralytics/yolov5/releases
+```
+
 ## Hardware & Software Requirements
 [Camera setup guide](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477/)
 
@@ -13,4 +18,5 @@
 [CSI Camera](https://github.com/JetsonHacksNano/CSI-Camera)
 
 [Yolov5](https://github.com/ultralytics/yolov5)
+
 
