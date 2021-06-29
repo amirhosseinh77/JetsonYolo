@@ -6,7 +6,7 @@
 [yolov5 models](https://github.com/ultralytics/yolov5/releases)
 
 ```
-https://github.com/ultralytics/yolov5/releases
+$ wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 ```
 
 ## Hardware & Software Requirements
