@@ -2,7 +2,7 @@
 
 [CodePlay Jetson Nano Playlist](https://www.youtube.com/watch?v=5-SIV7r2uiU&list=PLZIi3Od9VUwW49q6T1VjShktoOgrDi3O4)
 
-## download model
+## Download Model
 [yolov5 models](https://github.com/ultralytics/yolov5/releases)
 
 ```
