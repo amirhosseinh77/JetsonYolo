@@ -5,7 +5,7 @@
 ## Download Model
 [yolov5 models](https://github.com/ultralytics/yolov5/releases)
 
-Download the model using the command below and move to to weights folder.
+Download the model using the command below and move to weights folder.
 ```
 wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 ```
