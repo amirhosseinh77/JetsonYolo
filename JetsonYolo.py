@@ -61,7 +61,7 @@ if cap.isOpened():
                 label = obj['label']
                 score = obj['score']
                 [(xmin,ymin),(xmax,ymax)] = obj['bbox']
-                color = colors[Object_classes.index(label)]
+                color = Object_colors[Object_classes.index(label)]
                 frame = cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), color, 2) 
                 frame = cv2.putText(frame, f'{label} ({str(score)})', (xmin,ymin), cv2.FONT_HERSHEY_SIMPLEX , 0.75, color, 1, cv2.LINE_AA)
 
