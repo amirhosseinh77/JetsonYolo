@@ -5,20 +5,26 @@
 ## Download Model
 [yolov5 models](https://github.com/ultralytics/yolov5/releases)
 
+Download the model using the command below and move to to weights folder.
 ```
-$ wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
+wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 ```
 
-## Hardware & Software Requirements
+## Requirements
 [Camera setup guide](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477/)
 
 [Arducam IMX477 driver](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477-how-to-install-the-driver/)
 
 [PyTorch & torchvision for jetson](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048)
 
-## Python codes
+## Inference
 [CSI Camera](https://github.com/JetsonHacksNano/CSI-Camera)
 
 [Yolov5](https://github.com/ultralytics/yolov5)
+
+Run
+```
+python3 jetson_person_detection.py
+```
 
 
