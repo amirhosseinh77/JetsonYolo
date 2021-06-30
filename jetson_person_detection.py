@@ -1,9 +1,18 @@
 import cv2
 import numpy as np
-from elements.yolo import CAR_DETECTION as Person_Detection
+from elements.yolo import OBJ_DETECTION
 
-Person_classes = {0: 'Person'}
-Person_Detector = Person_Detection('weights/yolov5s.pt', Person_classes)
+Object_classes = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',
+                'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow',
+                'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
+                'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard',
+                'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
+                'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch',
+                'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone',
+                'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
+                'hair drier', 'toothbrush' ]
+                
+Object_Detector = OBJ_DETECTION('weights/yolov5s.pt', Object_classes)
 
 def gstreamer_pipeline(
     capture_width=1280,
@@ -43,16 +52,16 @@ if cap.isOpened():
         ret, frame = cap.read()
         if ret:
             # detection process
-            Persons = Person_Detector.detect(frame)
+            objs = Object_Detector.detect(frame)
 
             # plotting
-            for Person in Persons:
-                # print(Person)
-                label = Person['label']
-                score = Person['score']
-                [(xmin,ymin),(xmax,ymax)] = Person['bbox']
+            for obj in objs:
+                # print(obj)
+                label = obj['label']
+                score = obj['score']
+                [(xmin,ymin),(xmax,ymax)] = obj['bbox']
                 frame = cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), [0,255,255] , 2) 
-                frame = cv2.putText(frame, f'{label} ({str(score)})', (xmin,ymin), cv2.FONT_HERSHEY_SIMPLEX , 0.25, [0,255,255], 1, cv2.LINE_AA)
+                frame = cv2.putText(frame, f'{label} ({str(score)})', (xmin,ymin), cv2.FONT_HERSHEY_SIMPLEX , 0.75, [0,255,255], 1, cv2.LINE_AA)
 
         cv2.imshow("CSI Camera", frame)
         keyCode = cv2.waitKey(30)
