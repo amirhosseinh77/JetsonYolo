@@ -3,7 +3,7 @@ import numpy as np
 from elements.yolo import CAR_DETECTION as Person_Detection
 
 Person_classes = {0: 'Person'}
-Person_Detector = Person_Detection('weights/car_model.pt', Person_classes)
+Person_Detector = Person_Detection('weights/yolov5s.pt', Person_classes)
 
 def gstreamer_pipeline(
     capture_width=1280,
@@ -47,12 +47,12 @@ if cap.isOpened():
 
             # plotting
             for Person in Persons:
-                print(Person)
+                # print(Person)
                 label = Person['label']
                 score = Person['score']
                 [(xmin,ymin),(xmax,ymax)] = Person['bbox']
                 frame = cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), [0,255,255] , 2) 
-                # frame = cv2.putText(frame, f'{label} ({str(score)})', (xmin,ymin), cv2.FONT_HERSHEY_SIMPLEX , 0.75, [0,255,255], 2, cv2.LINE_AA)
+                frame = cv2.putText(frame, f'{label} ({str(score)})', (xmin,ymin), cv2.FONT_HERSHEY_SIMPLEX , 0.25, [0,255,255], 1, cv2.LINE_AA)
 
         cv2.imshow("CSI Camera", frame)
         keyCode = cv2.waitKey(30)
