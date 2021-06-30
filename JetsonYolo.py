@@ -57,11 +57,12 @@ if cap.isOpened():
             # plotting
             for obj in objs:
                 # print(obj)
+                color = np.random.randint(0,255,3)
                 label = obj['label']
                 score = obj['score']
                 [(xmin,ymin),(xmax,ymax)] = obj['bbox']
-                frame = cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), [0,255,255] , 2) 
-                frame = cv2.putText(frame, f'{label} ({str(score)})', (xmin,ymin), cv2.FONT_HERSHEY_SIMPLEX , 0.75, [0,255,255], 1, cv2.LINE_AA)
+                frame = cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), color, 2) 
+                frame = cv2.putText(frame, f'{label} ({str(score)})', (xmin,ymin), cv2.FONT_HERSHEY_SIMPLEX , 0.75, color, 1, cv2.LINE_AA)
 
         cv2.imshow("CSI Camera", frame)
         keyCode = cv2.waitKey(30)
