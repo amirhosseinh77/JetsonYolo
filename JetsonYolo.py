@@ -11,8 +11,9 @@ Object_classes = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', '
                 'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone',
                 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
                 'hair drier', 'toothbrush' ]
-                
-Object_Detector = OBJ_DETECTION('weights/yolov5s.pt', Object_classes)
+
+Object_colors = list(np.random.rand(80,3)*255)
+Object_detector = OBJ_DETECTION('weights/yolov5s.pt', Object_classes)
 
 def gstreamer_pipeline(
     capture_width=1280,
@@ -52,15 +53,15 @@ if cap.isOpened():
         ret, frame = cap.read()
         if ret:
             # detection process
-            objs = Object_Detector.detect(frame)
+            objs = Object_detector.detect(frame)
 
             # plotting
             for obj in objs:
                 # print(obj)
-                color = np.random.randint(0,255,3)
                 label = obj['label']
                 score = obj['score']
                 [(xmin,ymin),(xmax,ymax)] = obj['bbox']
+                color = colors[Object_classes.index(label)]
                 frame = cv2.rectangle(frame, (xmin,ymin), (xmax,ymax), color, 2) 
                 frame = cv2.putText(frame, f'{label} ({str(score)})', (xmin,ymin), cv2.FONT_HERSHEY_SIMPLEX , 0.75, color, 1, cv2.LINE_AA)
 
