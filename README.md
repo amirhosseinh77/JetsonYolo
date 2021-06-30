@@ -24,7 +24,7 @@ wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 
 Run
 ```
-python3 jetson_person_detection.py
+python3 JetsonYolo.py
 ```
 
 
