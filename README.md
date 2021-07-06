@@ -30,15 +30,15 @@ Use the following command to check if the camera is recognized correctly.
 ```
 $ ls /dev/video0
 ```
+
 ##### PyTorch & torchvision
 Yolov5 network model is implemented in the Pytorch framework.
-PyTorch is an open source machine learning library based on the Torch library, used for applications such as computer vision and natural language processing, primarily developed by Facebook's AI Research lab.
+PyTorch is an open source machine learning library based on the Torch library, used for applications such as computer vision and natural language processing.
 Heres a complete guide to [install PyTorch & torchvision](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048) for Python on Jetson Development Kits
-
 
 ## Inference
 
-Run
+After downloading the model and setting up the software and hardware, run the following command to detect objects.
 ```
 $ python3 JetsonYolo.py
 ```
