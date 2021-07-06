@@ -11,7 +11,7 @@ Select the desired model based on model size, required speed, and accuracy.
 You can find available models [here](https://github.com/ultralytics/yolov5/releases) in the **Assets** section.
 Download the model using the command below and move it to the **weights** folder.
 ```
-wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
+$ wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 ```
 
 ## Requirements
@@ -28,7 +28,7 @@ A 12.3 MP camera with an IMX477-160 sensor is used in this project which require
 [Arducam IMX477 driver](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477-how-to-install-the-driver/) is IMX477 driver driver along with its easy installation guide.
 Use the following command to check if the camera is recognized correctly.
 ```
-ls /dev/video0
+$ ls /dev/video0
 ```
 ##### PyTorch
 [PyTorch & torchvision for jetson](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048)
@@ -37,7 +37,7 @@ ls /dev/video0
 
 Run
 ```
-python3 JetsonYolo.py
+$ python3 JetsonYolo.py
 ```
 
 
