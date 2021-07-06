@@ -25,7 +25,7 @@ You can use this [camera setup guide](https://www.arducam.com/docs/camera-for-je
 By default, NVIDIA JetPack supports several cameras with different sensors, one of the most famous of which is the Raspberry Pi camera v2.
 But if you use other cameras, you need to install a sensor driver.
 A 12.3 MP camera with an IMX477-160 sensor is used in this project which requires an additional driver to connect. 
-[Arducam IMX477 driver](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477-how-to-install-the-driver/) is IMX477 driver driver along with its easy installation guide.
+Look at [Arducam IMX477 driver](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477-how-to-install-the-driver/) and their installation guide if you have the same camera sensor.
 Use the following command to check if the camera is recognized correctly.
 ```
 $ ls /dev/video0
