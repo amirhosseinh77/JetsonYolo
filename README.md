@@ -38,7 +38,7 @@ Heres a complete guide to [install PyTorch & torchvision](https://forums.develop
 
 ## Inference
 
-After downloading the model and setting up the software and hardware, run ```JetsonYolo.py``` to detect objects.
+After downloading the model and setting up the software and hardware, run ```JetsonYolo.py``` to detect objects with the camera.
 ```
 $ python3 JetsonYolo.py
 ```
