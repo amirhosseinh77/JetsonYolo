@@ -5,8 +5,6 @@ This project uses [CSI-Camera](https://github.com/JetsonHacksNano/CSI-Camera) to
 Check out [CodePlay jetson nano youtube playlist](https://www.youtube.com/watch?v=5-SIV7r2uiU&list=PLZIi3Od9VUwW49q6T1VjShktoOgrDi3O4) for more. 
 
 ## Download Model
-
-
 Select the desired model based on model size, required speed, and accuracy.
 You can find available models [here](https://github.com/ultralytics/yolov5/releases) in the **Assets** section.
 Download the model using the command below and move it to the **weights** folder.
@@ -15,7 +13,7 @@ $ wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 ```
 
 ## Requirements
-These steps are essential before executing the code.
+These steps are essential for software and hardware configuration.
 #### Camera Setup
 Install the camera in the MIPI-CSI Camera Connector on the carrier board.
 The pins on the camera ribbon should face the Jetson Nano module.
@@ -37,8 +35,7 @@ PyTorch is an open source machine learning library based on the Torch library, u
 Heres a complete guide to [install PyTorch & torchvision](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048) for Python on Jetson Development Kits
 
 ## Inference
-
-After downloading the model and setting up the software and hardware, run ```JetsonYolo.py``` to detect objects with the camera.
+Run ```JetsonYolo.py``` to detect objects with the camera.
 ```
 $ python3 JetsonYolo.py
 ```
