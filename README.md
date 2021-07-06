@@ -15,17 +15,17 @@ wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 ```
 
 ## Requirements
-        - Nvidia Jetson nano (B01)
-        - 12.3 MP camera with IMX477-160 sensor
 
+##### camera setup
 Install the camera in the MIPI-CSI Camera Connector on the carrier board.
 The pins on the camera ribbon should face the Jetson Nano module.
 You can use this [camera setup guide](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477/) for more info.
 
-
-
+##### camera driver
 
 [Arducam IMX477 driver](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477-how-to-install-the-driver/)
+
+##### PyTorch
 
 [PyTorch & torchvision for jetson](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048)
 
