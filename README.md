@@ -8,7 +8,7 @@ Check out [CodePlay jetson nano youtube playlist](https://www.youtube.com/watch?
 
 
 Select the desired model based on model size, required speed, and accuracy.
-You can find available models [here](https://github.com/ultralytics/yolov5/releases) in Assets section.
+You can find available models [here](https://github.com/ultralytics/yolov5/releases) in the **Assets** section.
 Download the model using the command below and move it to the **weights** folder.
 ```
 wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
@@ -22,7 +22,10 @@ The pins on the camera ribbon should face the Jetson Nano module.
 You can use this [camera setup guide](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477/) for more info.
 
 #### Camera Driver
-[Arducam IMX477 driver](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477-how-to-install-the-driver/)
+By default, Jet Pack supports several cameras with different sensors, one of the most famous of which is the Raspberry Pi camera v2.
+But if you use other cameras, you need to install a sensor driver.
+A 12.3 MP camera with an IMX477-160 sensor is used in this project. 
+[Arducam IMX477 driver](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477-how-to-install-the-driver/) is an IMX477 driver along with its installation guide.
 
 ##### PyTorch
 [PyTorch & torchvision for jetson](https://forums.developer.nvidia.com/t/pytorch-for-jetson-version-1-9-0-now-available/72048)
