@@ -22,7 +22,7 @@ The pins on the camera ribbon should face the Jetson Nano module.
 You can use this [camera setup guide](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477/) for more info.
 
 #### Camera Driver
-By default, Jet Pack supports several cameras with different sensors, one of the most famous of which is the Raspberry Pi camera v2.
+By default, NVIDIA JetPack supports several cameras with different sensors, one of the most famous of which is the Raspberry Pi camera v2.
 But if you use other cameras, you need to install a sensor driver.
 A 12.3 MP camera with an IMX477-160 sensor is used in this project. 
 [Arducam IMX477 driver](https://www.arducam.com/docs/camera-for-jetson-nano/native-jetson-cameras-imx219-imx477/imx477-how-to-install-the-driver/) is an IMX477 driver along with its installation guide.
