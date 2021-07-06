@@ -9,6 +9,7 @@ Select the desired model based on model size, required speed, and accuracy.
 You can find available models [here](https://github.com/ultralytics/yolov5/releases) in the **Assets** section.
 Download the model using the command below and move it to the **weights** folder.
 ```
+$ cd weights
 $ wget https://github.com/ultralytics/yolov5/releases/download/v5.0/yolov5s.pt
 ```
 
