@@ -40,5 +40,6 @@ Run ```JetsonYolo.py``` to detect objects with the camera.
 ```
 $ python3 JetsonYolo.py
 ```
+![Screenshot from 2021-07-07 03-25-48](https://user-images.githubusercontent.com/56114938/124771486-66ccaf00-df50-11eb-9d44-3f69d2a2a434.png)
 
 
