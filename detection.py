@@ -2,15 +2,18 @@ import cv2
 import numpy as np
 from elements.yolo import OBJ_DETECTION
 
-def warp_coords(xy: list, matrix) -> list:
-        return v2.warpPerspective(xy, matrix, (800, 600), flags=cv2.INTER_LINEAR)
+def warp_coords(xy: np.float32, matrix) -> np.float32:
+        return cv2.warpPerspective(xy, matrix, (800, 600), flags=cv2.INTER_LINEAR)
+        return np.matmul(xy, matrix)
 
 def get_center_coords(obj) -> list:
         [(xmin, ymin), (xmax, ymax)] = obj['bbox']
-        return ((xmax - xmin) / 2, (ymax - ymin) / 2)
+        return np.float32([(xmax - xmin) / 2, (ymax - ymin) / 2])
 
-def push_coords(coords: list) -> None:
+def push_coords(coords: np.float32) -> None:
         print(coords)
+
+VIDEO_SIZE = (1280, 720)
 
 Object_classes = ['cig_butt']
 Object_colors = list(np.random.rand(80,3)*255)
@@ -23,26 +26,19 @@ warp_matrix = cv2.getPerspectiveTransform(input_pts, output_pts)
 
 cap = cv2.VideoCapture(0)
 if cap.isOpened():
-        #window_handle = cv2.namedWindow("USB Camera", cv2.WINDOW_AUTOSIZE)
-        # Window
         while True:
                 ret, frame = cap.read()
+                frame = cv2.resize(frame, VIDEO_SIZE, fx=0, fy=0, interpolation = cv2.INTER_CUBIC)
+                frame = cv2.warpPerspective(frame, warp_matrix, VIDEO_SIZE, flags=cv2.INTER_CUBIC)
                 if ret:
-                        # detection process
                         objs = Object_detector.detect(frame)
-
-                        # plotting
                         for obj in objs:
                                 center_coords = get_center_coords(obj)
-                                warped_coords = warp_coords(center_coords, warp_matrix)
-                                push_coords(warped_coords)
+                                #warped_coords = warp_coords(center_coords, warp_matrix)
+                                push_coords(center_coords)
+                                #push_coords(warped_coords)
                         else:
                                 None
-
-                #cv2.imshow("USB Camera", frame)
-                #keyCode = cv2.waitKey(30)
-                #if keyCode == ord('q'):
-                       # break
         cap.release()
 else:
         print("Unable to open camera")
