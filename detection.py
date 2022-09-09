@@ -9,8 +9,8 @@ def get_center_coords(obj) -> list:
         [(xmin, ymin), (xmax, ymax)] = obj['bbox']
         return ((xmax - xmin) / 2, (ymax - ymin) / 2)
 
-def push_coords():
-        ...
+def push_coords(coords: list) -> None:
+        print(coords)
 
 Object_classes = ['cig_butt']
 Object_colors = list(np.random.rand(80,3)*255)
@@ -23,9 +23,9 @@ warp_matrix = cv2.getPerspectiveTransform(input_pts, output_pts)
 
 cap = cv2.VideoCapture(0)
 if cap.isOpened():
-        window_handle = cv2.namedWindow("USB Camera", cv2.WINDOW_AUTOSIZE)
+        #window_handle = cv2.namedWindow("USB Camera", cv2.WINDOW_AUTOSIZE)
         # Window
-        while cv2.getWindowProperty("USB Camera", 0) >= 0:
+        while True:
                 ret, frame = cap.read()
                 if ret:
                         # detection process
@@ -35,12 +35,14 @@ if cap.isOpened():
                         for obj in objs:
                                 center_coords = get_center_coords(obj)
                                 warped_coords = warp_coords(center_coords, warp_matrix)
+                                push_coords(warped_coords)
+                        else:
+                                None
 
-                cv2.imshow("USB Camera", frame)
-                keyCode = cv2.waitKey(30)
-                if keyCode == ord('q'):
-                        break
+                #cv2.imshow("USB Camera", frame)
+                #keyCode = cv2.waitKey(30)
+                #if keyCode == ord('q'):
+                       # break
         cap.release()
-        cv2.destroyAllWindows()
 else:
         print("Unable to open camera")
