@@ -42,4 +42,13 @@ $ python3 JetsonYolo.py
 ```
 ![Screenshot from 2021-07-07 03-25-48](https://user-images.githubusercontent.com/56114938/124771486-66ccaf00-df50-11eb-9d44-3f69d2a2a434.png)
 
-
+## Citation
+```
+@inproceedings{omidi2021embedded,
+  title={An Embedded Deep Learning-based Package for Traffic Law Enforcement},
+  author={Omidi, Abbas and Heydarian, Amirhossein and Mohammadshahi, Aida and Beirami, Behnam Asghari and Haddadi, Farzan},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={262--271},
+  year={2021}
+}
+```
